@@ -7,6 +7,7 @@ import com.paguepouco.api.dtos.Medicamento.CadastroMedicamento;
 import com.paguepouco.api.dtos.Medicamento.DetalhamentoMedicamento;
 import com.paguepouco.api.model.Medicamento;
 import com.paguepouco.api.repositories.MedicamentoRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/medicamento")
+@SecurityRequirement(name = "bearer-key")
 public class MedicamentoController {
 
     @Autowired

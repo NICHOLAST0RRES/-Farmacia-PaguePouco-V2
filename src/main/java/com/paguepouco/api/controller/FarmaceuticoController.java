@@ -6,6 +6,7 @@ import com.paguepouco.api.dtos.Farmaceutico.CadastroFarmaceutico;
 import com.paguepouco.api.dtos.Farmaceutico.DetalhamentoFarmaceutico;
 import com.paguepouco.api.model.Farmaceutico;
 import com.paguepouco.api.repositories.FarmaceuticoRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("farmaceutico")
+@SecurityRequirement(name = "bearer-key")
 public class FarmaceuticoController {
 
     @Autowired
